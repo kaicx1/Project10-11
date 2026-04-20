@@ -42,7 +42,6 @@ class CompilationEngine:
 
     #handles static and field 
     def compileClass(self):
-        self.open('class')
         self.eat('class')
         self.eat()
         self.eat('{')
@@ -51,7 +50,6 @@ class CompilationEngine:
         while self.val() in ('constructor', 'function', 'method'):
             self.compileSub()
         self.eat('}')
-        self.close('class')
 
     #handles constructor function and methods
     def compileClassVar(self):
