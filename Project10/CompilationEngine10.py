@@ -43,8 +43,6 @@ class CompilationEngine:
     def getOutput(self):
         return '\n'.join(self.out) + '\n'
 
-    #
-
     #handles static and field 
     def compileClass(self):
         self.open('class')
@@ -205,7 +203,7 @@ class CompilationEngine:
             self.compileTerm()
         self.close('expression')
 
-    #
+    #handles terms looks with peek to decide if ident or variable
     def compileTerm(self):
         self.open('term')
         t = self.type()
